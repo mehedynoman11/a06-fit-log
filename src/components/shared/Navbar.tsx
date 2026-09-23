@@ -32,15 +32,15 @@ const Navbar = () => {
                     )}
                 </div>
                 <div className="flex gap-2">
-                    <Image src={logo} alt='Logo' loading='eager' width={30} height={30} />
+                    <Link href={'/'}><Image src={logo} alt='Logo' loading='eager' width={30} height={30} /></Link>
                     <h2 className='font-semibold'>FITLOG</h2>
                 </div>
                 <ul className='hidden gap-3 md:flex'>
                     {links}
                 </ul>
                 <div className="flex gap-1">
-                    <button className='btn btn-sm sm:btn-md btn-neutral'>Plan <span className='bg-[#ccff00] p-1 w-7 rounded-full text-black font-semibold'>0</span></button>
-                    <button className='btn btn-sm sm:btn-md btn-neutral text-gray-300'>Saved <span className='border border-gray-300 p-1 w-7 rounded-full text-white font-semibold'>0</span></button>
+                    <Link href={'/my-plan'}><button className='btn btn-sm sm:btn-md btn-neutral'>Plan <span className='bg-[#ccff00] p-1 w-7 rounded-full text-black font-semibold'>0</span></button></Link>
+                    <Link href={'/my-plan'}><button className='btn btn-sm sm:btn-md btn-neutral text-gray-300'>Saved <span className='border border-gray-300 p-1 w-7 rounded-full text-white font-semibold'>0</span></button></Link>
                 </div>
             </div>
         </nav >
