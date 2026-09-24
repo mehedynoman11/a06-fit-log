@@ -5,3 +5,4 @@ export const getData = async () => {
     }
     return res.json();
 }
+
