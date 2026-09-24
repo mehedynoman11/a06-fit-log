@@ -55,7 +55,7 @@ const MyPlan = () => {
                         </div>
                         <button className="btn btn-primary rounded-full px-6">Build today&apos;s plan</button>
                         </div>: 
-                        <div className="rounded-2xl border border-dashed border-white/15 bg-white/5 px-6 py-14">
+                        <div className="rounded-2xl border border-dashed border-white/15 bg-white/5 px-6 py-14 space-y-3">
                             {
                                 addWorkout.map((workout,ind) => {
                                     return (

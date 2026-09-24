@@ -12,7 +12,7 @@ interface TodayCardPageProps {
 const TodayCardPage = ({workout}:TodayCardPageProps) => {
     return (
         <div className='flex flex-col md:flex-row md:justify-between items-center p-3 border-gray-700 border-2 bg-[#14171E] rounded-2xl'>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-4">
                 <Image  className='h-auto'
                     src={workout.image}
                     height={100}
@@ -53,12 +53,12 @@ const TodayCardPage = ({workout}:TodayCardPageProps) => {
                                             </div>
                     </div>
             </div>
-            <div className="flex gap-3 items-center">
-                <button className="w-full rounded-4xl border border-gray-600 px-4 py-2 text-sm font-semibold sm:w-auto">
+            <div className="flex gap-3 items-center pt-3 sm:pt-0">
+                <button className=" w-full rounded-4xl border border-gray-600 md:px-4 md:py-2 cursor-pointer text-xs md:text-sm font-semibold sm:w-auto">
                             View Details
                         </button>
-                        <button className="flex items-center w-full rounded-4xl cursor-pointer bg-[#C2F800] px-4 py-2 text-sm font-bold text-black sm:w-auto">
-                <FiCheck  className='text-lg mr-2'/> Mark as Done
+                        <button className="flex items-center w-full rounded-4xl cursor-pointer bg-[#C2F800] md:px-4 md:py-2 text-xs md:text-sm font-bold text-black sm:w-auto">
+                <FiCheck  className='hidden md:flex md:text-lg'/> Mark as Done
             </button>
             </div>
         </div>
