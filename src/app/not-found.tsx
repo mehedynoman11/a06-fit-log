@@ -5,7 +5,7 @@ export default function NotFound() {
     <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-6">
       <div className="w-full max-w-2xl text-center">
 
-        {/* 404 */}
+   
         <div className="relative">
           <h1 className="text-[120px] sm:text-[180px] font-black leading-none tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
             404
@@ -13,8 +13,6 @@ export default function NotFound() {
 
           <div className="absolute inset-0 blur-3xl opacity-20 bg-gradient-to-r from-cyan-500 to-purple-600 -z-10" />
         </div>
-
-        {/* Content */}
         <div className="mt-4">
           <h2 className="text-2xl sm:text-4xl font-bold">
             Page Not Found
@@ -26,7 +24,6 @@ export default function NotFound() {
           </p>
         </div>
 
-        {/* Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/"
@@ -36,7 +33,6 @@ export default function NotFound() {
           </Link>
         </div>
 
-        {/* Small footer */}
         <p className="mt-12 text-xs text-slate-600">
           Error Code: 404
         </p>
