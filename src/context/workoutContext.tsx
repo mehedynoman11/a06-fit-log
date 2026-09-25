@@ -25,6 +25,7 @@ const WorkoutProvider = ({ children }: { children: React.ReactNode }) => {
     const [addWorkout, setAddWorkout] = useState<IWorkout[]>([]);
     const [addSave, setAddSave] = useState<IWorkout[]>([]);
     const [activeTab, setActiveTab] = useState<"today" | "saved">("today");
+    // const [sorted, setSorted] = useState
     const sharedData = {
         addWorkout,
         setAddWorkout,

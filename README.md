@@ -32,7 +32,6 @@ FitLog is a workout tracking web app where users can browse a workout library, b
 - ✅ **Mark as Done** — track completed workouts in real time
 - 🔍 **Workout Details** — view exercise info including equipment, duration, calories, and rating
 - 📱 **Fully Responsive Design** — optimized layout across mobile, tablet, and desktop
-- 🌗 **Dark UI Theme** — custom dark color palette with a high-contrast accent color
 - ⚡ **Global State with Context API** — shared workout, saved list, and active tab state across the app
 
 ---
@@ -52,25 +51,6 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
-
----
-
-## 📁 Project Structure (high level)
-
-```
-├── app/              # Next.js app router pages
-├── components/       # Reusable UI components
-├── context/           # WorkoutProvider & WorkoutContext (global state)
-├── types/             # TypeScript interfaces (IWorkout, IWorkoutContext)
-├── public/            # Static assets & images
-└── README.md
-```
-
----
-
-## 📄 License
-
-This project is open source and available for learning purposes.
 
 ---
 

@@ -1,19 +1,17 @@
 'use client'
-
 import SaveCard from "@/components/shared/SaveCard";
 import TodayCardPage from "@/components/shared/TodayCard";
 import { WorkoutContext } from "@/context/workoutContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 
 const MyPlan = () => {
-    const { addWorkout, activeTab, setActiveTab , addSave} = useContext(WorkoutContext);
-    
-    
+    const { addWorkout, activeTab, setActiveTab, addSave } = useContext(WorkoutContext);
     const currentList = activeTab === "today" ? addWorkout : addSave;
     const totalExercises = currentList.length;
-    const totalMinutes = currentList.reduce((sum, w)=> sum+w.duration, 0)
-    const totalCalories = currentList.reduce((sum, w)=> sum+w.caloriesBurned, 0)
+    const totalMinutes = currentList.reduce((sum, w) => sum + w.duration, 0)
+    const totalCalories = currentList.reduce((sum, w) => sum + w.caloriesBurned, 0)
+
     return (
         <div className='container mx-auto max-w-280 p-4 md:p-0'>
             <div className="my-5 text-center md:text-left">
@@ -109,7 +107,15 @@ const MyPlan = () => {
                         </div>
                     }
                 </div>
+                <div className="tab tabs-border border border-gray-700 text-white absolute right-2 md:right-20 w-20 overflow-hidden shrink-0">
+                    <select className="bg-gray-900" >
+                        <option className="bg-gray-900" value="duration">Duration</option>
+                        <option className="bg-gray-900" value="calories">Calories</option>
+                        <option className="bg-gray-900" value="rating">Rating</option>
+                    </select>
+                </div>
             </div>
+                
         </div>
     );
 };
