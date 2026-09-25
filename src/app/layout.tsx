@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import WorkoutProvider from "@/context/workoutContext";
 import { Bounce, ToastContainer } from "react-toastify";
+import Footer from "@/components/shared/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,8 +31,9 @@ export default function RootLayout({
         <WorkoutProvider>
           <Navbar />
           {children}
+          <Footer />
         <ToastContainer
-          position="top-center"
+          position="bottom-right"
           autoClose={800}
           hideProgressBar={false}
           newestOnTop={false}

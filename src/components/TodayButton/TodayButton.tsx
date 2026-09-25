@@ -12,8 +12,14 @@ const TodayButton = ({workout}:TodayButtonProps) => {
 
     const handleAddToday = () => {
         // console.log("button Click Triggered", workout);
-        setAddWorkout([...addWorkout, workout]);
-        toast.success("Added to Today's Plan")
+        const isClicked = addWorkout.some(val=> val.id === workout.id);
+        if (isClicked) {
+            toast.error("Already in your Plan.")
+        } else {
+            setAddWorkout([...addWorkout, workout]);
+            toast.success("Added to Today's Plan")
+        }
+        
     }
     return (
         <div>

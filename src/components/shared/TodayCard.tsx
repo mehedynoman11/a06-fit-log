@@ -2,6 +2,9 @@ import { IWorkout } from '@/type/workoutType';
 import Image from 'next/image';
 import { FaRegClock, FaRegStar } from 'react-icons/fa';
 import { FiCheck } from 'react-icons/fi';
+import { RxCross2 } from 'react-icons/rx';
+import DeleteButtonPage from '../DeleteButton/DeleteTodayButton';
+import DeleteTodayButtonPage from '../DeleteButton/DeleteTodayButton';
 
 interface TodayCardPageProps {
     workout: IWorkout;
@@ -69,6 +72,7 @@ const TodayCardPage = ({ workout }: TodayCardPageProps) => {
                 <button className="flex items-center justify-center gap-1 w-full sm:w-auto rounded-4xl cursor-pointer bg-[#C2F800] px-4 py-2 text-xs md:text-sm font-bold text-black">
                     <FiCheck className="hidden md:flex md:text-lg" /> Mark as Done
                 </button>
+                <DeleteTodayButtonPage workout={workout}/>
             </div>
         </div>
     );

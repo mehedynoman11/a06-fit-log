@@ -60,7 +60,7 @@ const MyPlan = () => {
                                     Pick a lift from the library to build today&apos;s session.
                                 </p>
                             </div>
-                            <button className="btn btn-primary rounded-full px-6">Build today&apos;s plan</button>
+                            <button className="btn btn-primary bg-[#C2F10D] font-bold text-black rounded-full px-6">Build today&apos;s plan</button>
                         </div> :
                         <div className="rounded-2xl border border-dashed border-white/15 bg-white/5 px-6 py-14 space-y-3">
                             {
@@ -97,7 +97,7 @@ const MyPlan = () => {
                                     Browse the library and save a lift to get today moving.
                                 </p>
                             </div>
-                            <button className="btn btn-primary rounded-full px-6">Go to workouts</button>
+                            <button className="btn btn-primary rounded-full bg-[#C2F10D] font-bold text-black px-6">Go to workouts</button>
                         </div>
                         :
                         <div className="rounded-2xl border border-dashed border-white/15 bg-white/5 px-6 py-14 space-y-3">
