@@ -3,14 +3,11 @@
 import SaveCard from "@/components/shared/SaveCard";
 import TodayCardPage from "@/components/shared/TodayCard";
 import { WorkoutContext } from "@/context/workoutContext";
-import { IWorkout } from "@/type/workoutType";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 
 const MyPlan = () => {
-    const { addWorkout, setAddWorkout } = useContext(WorkoutContext);
-    const { addSave, setAddSave } = useContext(WorkoutContext);
-    const { activeTab, setActiveTab } = useContext(WorkoutContext);
+    const { addWorkout, activeTab, setActiveTab , addSave} = useContext(WorkoutContext);
     
     
     const currentList = activeTab === "today" ? addWorkout : addSave;

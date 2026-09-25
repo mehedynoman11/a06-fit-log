@@ -2,6 +2,7 @@
 import { WorkoutContext } from "@/context/workoutContext";
 import { IWorkout } from "@/type/workoutType";
 import { useContext } from "react";
+import { toast } from "react-toastify";
 
 interface SaveButtonProps {
     workout: IWorkout
@@ -12,7 +13,8 @@ const SaveButtonPage = ({workout}:SaveButtonProps) => {
  
      const handleAddSave = () => {
          // console.log("button Click Triggered", workout);
-         setAddSave([...addSave, workout])
+         setAddSave([...addSave, workout]);
+         toast.success("Saved successfully")
      }
 
     return (

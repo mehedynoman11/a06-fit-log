@@ -2,6 +2,7 @@
 import { WorkoutContext } from '@/context/workoutContext';
 import { IWorkout } from '@/type/workoutType';
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
 interface TodayButtonProps {
     workout: IWorkout
 }
@@ -11,7 +12,8 @@ const TodayButton = ({workout}:TodayButtonProps) => {
 
     const handleAddToday = () => {
         // console.log("button Click Triggered", workout);
-        setAddWorkout([...addWorkout, workout])
+        setAddWorkout([...addWorkout, workout]);
+        toast.success("Added to Today's Plan")
     }
     return (
         <div>

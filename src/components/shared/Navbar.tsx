@@ -3,10 +3,14 @@ import Image from 'next/image';
 import logo from "@/assets/logo.png"
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { WorkoutContext } from '@/context/workoutContext';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { addWorkout, activeTab, setActiveTab , addSave} = useContext(WorkoutContext);
+    const currentList = activeTab === "today" ? addWorkout : addSave;
+     const totalExercises = currentList.length;
     const pathName = usePathname();
     const links = <>
         <li className='text-gray-300 '><Link className={`rounded-3xl md:px-3 md:py-2 ${pathName === '/' ? 'text-[#ccff00] md:bg-[#3c4226] ' : ''}`} href={'/'}>Workouts</Link></li>
@@ -39,8 +43,8 @@ const Navbar = () => {
                     {links}
                 </ul>
                 <div className="flex gap-1">
-                    <Link href={'/my-plan'}><button className='btn btn-sm sm:btn-md btn-neutral'>Plan <span className='bg-[#ccff00] p-1 w-7 rounded-full text-black font-semibold'>0</span></button></Link>
-                    <Link href={'/my-plan'}><button className='btn btn-sm sm:btn-md btn-neutral text-gray-300'>Saved <span className='border border-gray-300 p-1 w-7 rounded-full text-white font-semibold'>0</span></button></Link>
+                    <Link href={'/my-plan'}><button className='btn btn-sm sm:btn-md btn-neutral'>Plan <span className='bg-[#ccff00] p-1 w-7 rounded-full text-black font-semibold'>{totalExercises}</span></button></Link>
+                    <Link href={'/my-plan'}><button className='btn btn-sm sm:btn-md btn-neutral text-gray-300'>Saved<span className='border border-gray-300 p-1 w-7 rounded-full text-white font-semibold'>{totalExercises}</span></button></Link>
                 </div>
             </div>
         </nav >
