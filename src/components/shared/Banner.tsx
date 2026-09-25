@@ -15,7 +15,7 @@ const Banner = () => {
                         <button className='px-4 py-2 rounded-sm text-sm bg-[#C2F800] font-bold text-[#000]'>BROWSE WORKOUTS</button>
                     </div>
                 </div>
-                <div className="w-100 pt-6 md:pt-0 flex justify-end">
+                <div className=" md:w-100 pt-6 md:pt-0 flex justify-center md:justify-end object-cover">
                     <Image src={bannerImg} alt='Logo' loading='eager' width={350} height={350} />
                 </div>
             </div>

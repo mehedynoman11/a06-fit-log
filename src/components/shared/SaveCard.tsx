@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { FaRegClock, FaRegStar } from 'react-icons/fa';
 import { FiCheck } from 'react-icons/fi';
 
-interface TodayCardPageProps {
+interface SaveCardProps {
     workout: IWorkout;
 }
 
-const TodayCardPage = ({ workout }: TodayCardPageProps) => {
+const SaveCard = ({ workout }: SaveCardProps) => {
     return (
         <div className="flex flex-col md:flex-row md:justify-between items-center md:items-center gap-4 p-4 border-gray-700 border-2 bg-[#14171E] rounded-2xl">
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto text-center sm:text-left">
@@ -74,4 +74,4 @@ const TodayCardPage = ({ workout }: TodayCardPageProps) => {
     );
 };
 
-export default TodayCardPage;
+export default SaveCard;

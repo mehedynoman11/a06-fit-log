@@ -26,7 +26,7 @@ const Navbar = () => {
                     </button>
 
                     {isOpen && (
-                        <ul className="absolute left-0 top-12 z-50 w-30 h-20 rounded-lg bg-cyan-800 p-2 shadow-lg">
+                        <ul className="absolute left-0 top-12 z-50 w-30 h-20 border-gray-600 border-2 rounded-lg p-2 shadow-lg">
                             {links}
                         </ul>
                     )}
