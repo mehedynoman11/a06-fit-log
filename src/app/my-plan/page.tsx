@@ -2,6 +2,7 @@
 import SaveCard from "@/components/shared/SaveCard";
 import TodayCardPage from "@/components/shared/TodayCard";
 import { WorkoutContext } from "@/context/workoutContext";
+import { IWorkout } from "@/type/workoutType";
 import { useContext, useState } from "react";
 
 
@@ -11,7 +12,25 @@ const MyPlan = () => {
     const totalExercises = currentList.length;
     const totalMinutes = currentList.reduce((sum, w) => sum + w.duration, 0)
     const totalCalories = currentList.reduce((sum, w) => sum + w.caloriesBurned, 0)
+    const [sortBy, setSortBy] = useState<"duration"|"calories"|"rating">("duration");
+    
+    const sortAll = (workout:IWorkout[]) => {
+        const sortedWorkout = [...workout];
 
+        if (sortBy === 'duration') {
+            sortedWorkout.sort((a,b) => b.duration - a.duration);
+        } else if (sortBy === 'calories') {
+            sortedWorkout.sort((a,b) => b.caloriesBurned - a.caloriesBurned);
+        } else if (sortBy === 'rating') {
+            sortedWorkout.sort((a,b) => b.rating - a.rating)
+        }
+
+        return sortedWorkout;
+    }
+
+    const sortedWorkout = sortAll(addWorkout);
+    const sortedSave = sortAll(addSave);
+    console.log(sortedWorkout, "sorted toady")
     return (
         <div className='container mx-auto max-w-280 p-4 md:p-0'>
             <div className="my-5 text-center md:text-left">
@@ -62,7 +81,7 @@ const MyPlan = () => {
                         </div> :
                         <div className="rounded-2xl border border-dashed border-white/15 bg-white/5 px-6 py-14 space-y-3">
                             {
-                                addWorkout.map((workout, ind) => {
+                                sortedWorkout.map((workout, ind) => {
                                     return (
                                         <TodayCardPage key={ind} workout={workout} />
                                     )
@@ -99,7 +118,7 @@ const MyPlan = () => {
                         </div>
                         :
                         <div className="rounded-2xl border border-dashed border-white/15 bg-white/5 px-6 py-14 space-y-3">
-                            {addSave.map((workout, ind) => {
+                            {sortedSave.map((workout, ind) => {
                                 return (
                                     <SaveCard key={ind} workout={workout} />
                                 )
@@ -107,8 +126,10 @@ const MyPlan = () => {
                         </div>
                     }
                 </div>
-                <div className="tab tabs-border border border-gray-700 text-white absolute right-2 md:right-20 w-20 overflow-hidden shrink-0">
-                    <select className="bg-gray-900" >
+                <div className="text-left absolute items-center right-5 md:right-15">
+                    <select 
+                    onChange={(e)=>setSortBy(e.target.value as "duration"|"calories"|"rating")}
+                    className="bg-gray-900 select select-success md:select-sm" >
                         <option className="bg-gray-900" value="duration">Duration</option>
                         <option className="bg-gray-900" value="calories">Calories</option>
                         <option className="bg-gray-900" value="rating">Rating</option>
