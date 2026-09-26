@@ -30,7 +30,6 @@ const MyPlan = () => {
 
     const sortedWorkout = sortAll(addWorkout);
     const sortedSave = sortAll(addSave);
-    console.log(sortedWorkout, "sorted toady")
     return (
         <div className='container mx-auto max-w-280 p-4 md:p-0'>
             <div className="my-5 text-center md:text-left">
